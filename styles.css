@@ -45,6 +45,7 @@ body {
 
 .dashboard {
   width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -66,8 +67,13 @@ body {
   padding: 20px;
   padding-top: 30px;
   gap: 5px;
+  background-color: var(--Gray-900);
+  padding-bottom: 100px;
+  border-radius: 0px 0px 30px 30px;
+  z-index: 1;
 }
 .social__info {
+  max-width: 250px;
   gap: 5px;
   padding-bottom: 10px;
   box-shadow: 0px 1px 1px -1px var(--Gray-400);
@@ -86,10 +92,10 @@ body {
 
 .mode {
   width: 100%;
+  max-width: 250px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 10px;
 }
 
 .mode__switch {
@@ -148,15 +154,19 @@ input:checked + .checkbox-slider::before {
 
 .social__cards {
   width: 100%;
-  margin-top: 20px;
+  margin-top: -40px;
   gap: 20px;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  z-index: 2;
 }
 
 .social__card,
 .overview__card {
   width: 90%;
+  max-width: 250px;
   height: 180px;
   background-color: var(--Navy-950);
   border-radius: 0px 0px 5px 5px;
@@ -240,6 +250,7 @@ input:checked + .checkbox-slider::before {
 
 .overview__header {
   width: 100%;
+  max-width: 555px;
   padding: 20px;
 }
 
@@ -249,6 +260,8 @@ input:checked + .checkbox-slider::before {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -298,4 +311,72 @@ input:checked + .checkbox-slider::before {
 
 .overview__resume .down {
   color: var(--Red-500);
+}
+
+
+@media(min-width: 520px){
+   .social__header{
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--Gray-900);
+    padding-bottom: 180px;
+  }
+
+
+  .social__info{
+    box-shadow: none;
+    padding-top: 5px;
+  }
+
+  .mode{
+    justify-content: flex-end;
+    gap: 10px;
+    align-self: flex-start;
+  }
+}
+
+@media(min-width: 768px){
+  .social__cards{
+    margin: 0 auto;
+    margin-top: -100px;
+    max-width: 768px;
+    justify-content: center;
+  }
+
+  .overview__cards{
+    max-width: 768px;;
+  }
+}
+
+@media(min-width: 1100px){
+  .social__cards{
+    max-width: 1100px;
+  }
+
+  .overview__cards{
+    max-width: 1100px;;
+  }
+
+  .social__info,
+  .mode{
+    max-width: 525px;
+  }
+
+  .overview__header{
+    max-width: 1100px;
+  }
+
+  .title{
+    font-size: 2rem;
+  }
+
+  .followers{
+    font-size: 1rem;
+  }
+
+  .mode p{
+    font-size: 1rem;
+  }
+
+
 }
