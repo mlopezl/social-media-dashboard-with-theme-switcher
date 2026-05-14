@@ -9,6 +9,7 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link rel="stylesheet" href="./styles.css" />
 
     <title>Frontend Mentor | Social Media Dashboard</title>
   </head>
@@ -16,17 +17,21 @@
     <main class="dashboard">
       <section class="social" aria-label="Social media statistics">
         <header class="social__header">
-          <div class="dashboard-info">
+          <div class="social__info">
             <h1 class="title">Social Media Dashboard</h1>
             <p class="followers">Total Followers: 23,004</p>
           </div>
-          <label class="mode" for="toggle">
-            <span>Dark Mode</span>
-            <div class="mode__switch">
-              <input type="checkbox" id="toggle" aria-label="Toggle dark mode" />
+          <div class="mode">
+            <p>Dark Mode</p>
+            <label class="mode__switch" for="toggle">
+              <input
+                type="checkbox"
+                id="toggle"
+                aria-label="Toggle dark mode"
+              />
               <div class="checkbox-slider"></div>
-            </div>
-          </label>
+            </label>
+          </div>
         </header>
         <section class="social__cards">
           <article class="social__card">
@@ -172,7 +177,7 @@
               <p>107</p>
               <div class="overview__resume">
                 <img src="./images/icon-down.svg" alt="Arrow down icon" />
-                <p>19%</p>
+                <p class="down">19%</p>
               </div>
             </div>
           </article>
@@ -185,7 +190,7 @@
               <p>1407</p>
               <div class="overview__resume">
                 <img src="./images/icon-down.svg" alt="Arrow down icon" />
-                <p>12%</p>
+                <p class="down">12%</p>
               </div>
             </div>
           </article>
