@@ -21,9 +21,11 @@
   --Gray-950: hsl(230, 17%, 14%);
   --Gray-900: hsl(232, 19%, 15%);
   --Navy-950: hsl(228, 28%, 20%);
+  --Navy-500: hsl(228, 26%, 27%);
   --White: hsl(0, 100%, 100%);
   --Blue-50: hsl(225, 100%, 98%);
   --Navy-50: hsl(227, 47%, 96%);
+  --Navy-100: hsl(232, 33%, 91%);
   --Gray-650: hsl(228, 12%, 44%);
 }
 
@@ -38,7 +40,12 @@ html {
   font-size: 14px;
 }
 
-body {
+.dashboard{
+  background-color: var(--White);
+  color: var(--Gray-950);
+}
+
+.dark .dashboard {
   background-color: var(--Gray-950);
   color: var(--White);
 }
@@ -67,11 +74,17 @@ body {
   padding: 20px;
   padding-top: 30px;
   gap: 5px;
-  background-color: var(--Gray-900);
+  background-color: var(--Blue-50);
   padding-bottom: 100px;
   border-radius: 0px 0px 30px 30px;
   z-index: 1;
 }
+
+.dark .social__header{
+  background-color: var(--Gray-900);
+}
+
+
 .social__info {
   max-width: 250px;
   gap: 5px;
@@ -87,6 +100,11 @@ body {
 .mode p {
   font-size: 0.9rem;
   font-weight: bold;
+  color: var(--Gray-650);
+}
+
+.dark .followers,
+.dark .mode p {
   color: var(--Gray-400);
 }
 
@@ -96,6 +114,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 13px;
 }
 
 .mode__switch {
@@ -114,7 +133,7 @@ body {
 .checkbox-slider {
   position: absolute;
   cursor: pointer;
-  background: var(--Linear-gradient-toggle);
+  background-color: var(--Gray-400);
   border-radius: 34px;
   top: 0;
   left: 0;
@@ -123,17 +142,21 @@ body {
   transition: all 0.4s ease;
 }
 
-.mode__switch:hover .checkbox-slider {
+.dark .checkbox-slider{
   background: var(--Linear-gradient-toggle);
 }
 
-.mode__switch:focus {
-  border: none;
-  outline: none;
+.mode__switch:hover .checkbox-slider {
+  background: var(--Green-500);
 }
 
-.mode__switch:focus .checkbox-slider {
-  background: var(--Green-500);
+.dark .mode__switch:hover .checkbox-slider {
+  background: var(--Linear-gradient-toggle);
+}
+
+.dark .mode p:has(~ .mode__switch:hover){
+  color: var(--White);
+  transition: all 300ms ease;
 }
 
 .checkbox-slider::before {
@@ -143,9 +166,13 @@ body {
   width: 16px;
   left: 2px;
   bottom: 2px;
-  background-color: var(--Gray-950);
+  background-color: var(--White);
   border-radius: 50%;
   transition: 0.4s;
+}
+
+.dark .checkbox-slider::before {
+  background-color: var(--Gray-950);
 }
 
 input:checked + .checkbox-slider::before {
@@ -168,7 +195,7 @@ input:checked + .checkbox-slider::before {
   width: 90%;
   max-width: 250px;
   height: 180px;
-  background-color: var(--Navy-950);
+  background-color: var(--Navy-50);
   border-radius: 0px 0px 5px 5px;
   display: flex;
   flex-direction: column;
@@ -176,6 +203,22 @@ input:checked + .checkbox-slider::before {
   align-items: center;
   gap: 10px;
   position: relative;
+}
+
+.social__card:hover,
+.overview__card:hover {
+  background-color: var(--Navy-100);
+  transition: all 300ms ease;
+}
+
+.dark .social__card,
+.dark .overview__card {
+  background-color: var(--Navy-950);
+}
+
+.dark .social__card:hover,
+.dark .overview__card:hover {
+  background-color: var(--Navy-500);
 }
 
 .social__card::before {
@@ -214,8 +257,13 @@ input:checked + .checkbox-slider::before {
 
 .user {
   font-size: 0.8rem;
+  color: var(--Gray-650);
+}
+
+.dark .user {
   color: var(--Gray-400);
 }
+
 
 .followers__quantity {
   font-size: 3.5rem;
@@ -225,10 +273,14 @@ input:checked + .checkbox-slider::before {
 .followers__label {
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--Gray-400);
+  color: var(--Gray-650);
   font-size: 0.8rem;
   font-weight: 300;
   margin-top: -10px;
+}
+
+.dark .followers__label {
+  color: var(--Gray-400);
 }
 
 .social__resume img {
@@ -281,6 +333,10 @@ input:checked + .checkbox-slider::before {
 
 .labels p {
   font-size: 0.9rem;
+  color: var(--Gray-650);
+}
+
+.dark .labels p {
   color: var(--Gray-400);
 }
 
@@ -318,7 +374,6 @@ input:checked + .checkbox-slider::before {
    .social__header{
     flex-direction: row;
     align-items: center;
-    background-color: var(--Gray-900);
     padding-bottom: 180px;
   }
 
