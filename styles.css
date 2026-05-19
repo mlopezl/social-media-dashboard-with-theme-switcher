@@ -146,6 +146,23 @@ html {
   background: var(--Linear-gradient-toggle);
 }
 
+.mode__switch:focus{
+  border: none;
+  outline: none;
+}
+
+.mode__switch:focus .checkbox-slider{
+  background: var(--Green-500);
+}
+
+.dark .mode__switch:focus p{
+  color: var(--White); 
+}
+
+.mode__switch:focus .checkbox-slider{
+  background: var(--Linear-gradient-toggle);
+}
+
 .mode__switch:hover .checkbox-slider {
   background: var(--Green-500);
 }
@@ -154,7 +171,8 @@ html {
   background: var(--Linear-gradient-toggle);
 }
 
-.dark .mode p:has(~ .mode__switch:hover){
+.dark .mode p:has(~ .mode__switch:hover),
+.dark .mode p:has(~ .mode__switch:focus){
   color: var(--White);
   transition: all 300ms ease;
 }
