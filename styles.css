@@ -40,7 +40,7 @@ html {
   font-size: 14px;
 }
 
-.dashboard{
+.dashboard {
   background-color: var(--White);
   color: var(--Gray-950);
 }
@@ -80,10 +80,9 @@ html {
   z-index: 1;
 }
 
-.dark .social__header{
+.dark .social__header {
   background-color: var(--Gray-900);
 }
-
 
 .social__info {
   max-width: 250px;
@@ -142,24 +141,24 @@ html {
   transition: all 0.4s ease;
 }
 
-.dark .checkbox-slider{
+.dark .checkbox-slider {
   background: var(--Linear-gradient-toggle);
 }
 
-.mode__switch:focus{
+.mode__switch:focus {
   border: none;
   outline: none;
 }
 
-.mode__switch:focus .checkbox-slider{
+.mode__switch:focus .checkbox-slider {
   background: var(--Green-500);
 }
 
-.dark .mode__switch:focus p{
-  color: var(--White); 
+.dark .mode__switch:focus p {
+  color: var(--White);
 }
 
-.mode__switch:focus .checkbox-slider{
+.mode__switch:focus .checkbox-slider {
   background: var(--Linear-gradient-toggle);
 }
 
@@ -172,7 +171,7 @@ html {
 }
 
 .dark .mode p:has(~ .mode__switch:hover),
-.dark .mode p:has(~ .mode__switch:focus){
+.dark .mode p:has(~ .mode__switch:focus) {
   color: var(--White);
   transition: all 300ms ease;
 }
@@ -224,9 +223,12 @@ input:checked + .checkbox-slider::before {
 }
 
 .social__card:hover,
-.overview__card:hover {
+.social__card:focus,
+.overview__card:hover,
+.overview__card:focus {
   background-color: var(--Navy-100);
   transition: all 300ms ease;
+  outline: none;
 }
 
 .dark .social__card,
@@ -235,7 +237,9 @@ input:checked + .checkbox-slider::before {
 }
 
 .dark .social__card:hover,
-.dark .overview__card:hover {
+.dark .social__card:focus,
+.dark .overview__card:hover,
+.dark .overview__card:focus {
   background-color: var(--Navy-500);
 }
 
@@ -281,7 +285,6 @@ input:checked + .checkbox-slider::before {
 .dark .user {
   color: var(--Gray-400);
 }
-
 
 .followers__quantity {
   font-size: 3.5rem;
@@ -387,69 +390,65 @@ input:checked + .checkbox-slider::before {
   color: var(--Red-500);
 }
 
-
-@media(min-width: 520px){
-   .social__header{
+@media (min-width: 520px) {
+  .social__header {
     flex-direction: row;
     align-items: center;
     padding-bottom: 180px;
   }
 
-
-  .social__info{
+  .social__info {
     box-shadow: none;
     padding-top: 5px;
   }
 
-  .mode{
+  .mode {
     justify-content: flex-end;
     gap: 10px;
     align-self: flex-start;
   }
 }
 
-@media(min-width: 768px){
-  .social__cards{
+@media (min-width: 768px) {
+  .social__cards {
     margin: 0 auto;
     margin-top: -100px;
     max-width: 768px;
     justify-content: center;
   }
 
-  .overview__cards{
-    max-width: 768px;;
+  .overview__cards {
+    max-width: 768px;
   }
 }
 
-@media(min-width: 1100px){
-  .social__cards{
+@media (min-width: 1100px) {
+  .social__cards {
     max-width: 1100px;
   }
 
-  .overview__cards{
-    max-width: 1100px;;
+  .overview__cards {
+    max-width: 1100px;
   }
 
   .social__info,
-  .mode{
+  .mode {
     max-width: 525px;
   }
 
-  .overview__header{
+  .overview__header {
     max-width: 1100px;
   }
 
-  .title{
+  .title {
     font-size: 2rem;
   }
 
-  .followers{
+  .followers {
     font-size: 1rem;
   }
 
-  .mode p{
+  .mode p {
     font-size: 1rem;
   }
-
-
 }
